@@ -51,6 +51,7 @@ img{
     top:-80px;
     left:120px;
     width:60px;
+	overflow:hidden;
     text-align:center;
     border:0;
     font-weight:bold;
