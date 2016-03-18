@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Task4 - 定位与居中 - position方法 - by echosoar</title>
+		<meta charset="utf-8"/>
+		<meta name="author" content="echosoar http://iwenku.net"/>
+	</head>
+	<style>
+	.contain{
+		position:absolute;
+		top:50%;
+		left:50%;
+		height:300px;
+		width:400px;
+		background:#ccc;
+		margin-left:-200px;
+		margin-top:-150px;
+		overflow:hidden;
+	}
+	.contain div{
+		position:absolute;
+		height:50px;
+		width:50px;
+	}
+	.corner-lt{
+		top:0;
+		left:0;
+		background:#ff0;
+		border-radius:0 0 50px 0;
+	}
+	.corner-rb{
+		bottom:0;
+		right:0;
+		background:#ff0;
+		border-radius:50px 0 0 0;
+	}
+	</style>
+	<body>
+		<div class="contain">
+			<div class="corner-lt"></div>
+			<div class="corner-rb"></div>
+		</div>
+	</body>
+</html>
