@@ -1,0 +1,69 @@
+@import "DEFAULT";
+@import "config";
+@import "compass/css3";
+
+@include init;
+
+html{
+	@include Overflow;
+}
+body{
+	display: table;
+}
+
+#block{
+	
+	display:table-cell;
+	vertical-align:middle;
+	
+	width: 100%;
+	min-height: $block_size_height;
+	max-height: 100%;
+	
+	
+	@include Overflow(Y);
+	
+	.center{
+		background: $block_color;
+		overflow: hidden;
+		padding: $circle_size / 4 0;
+		
+		width: $block_size_width;
+		
+		margin-left: auto;
+		margin-right: auto;
+		
+		
+		&:before,&:after{
+			position: absolute;
+			content: ' ';
+		
+			width: $circle_size;
+			height: $circle_size;
+		
+			background: $circle_color;
+		
+			@include border-radius(50%);
+		}
+	
+		&:before{
+			left: - ( $circle_size / 2 );
+			top: - ( $circle_size / 2 );
+		}
+	
+		&:after{
+			right: - ( $circle_size / 2 );
+			bottom: - ( $circle_size / 2 );
+		}
+		
+		p{
+			height: auto;
+			margin: $circle_size / 4 $circle_size / 2 ;
+		
+			white-space: break-all;
+			word-wrap: break-word;
+		
+			overflow: hidden;
+		}
+	}
+}
