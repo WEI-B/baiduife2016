@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Task10 - flex实践 - by echosoar</title>
+		<meta charset="utf-8"/>
+		<meta name="author" content="echosoar http://iwenku.net"/>
+	</head>
+	<style>
+	*{
+		padding:0;
+		margin:0;
+		box-sizing:border-box;
+	}
+	html,body{
+		width:100%;
+        height:100%;
+	}
+	.flex{
+		position:absolute;
+		display:flex;
+		width:100%;
+		min-width:640px;
+		height:100%;
+		padding:20px;
+		border:2px solid #C33;
+		align-items:center;
+		justify-content:space-between;
+	}
+	.flex_div{
+		width:150px;
+		border:2px solid #C33;
+		
+	}
+	.flex_div:first-child{
+		height:120px;
+	}
+	.flex_div:nth-child(2){
+		height:100px;
+	}
+	.flex_div:nth-child(3){
+		height:40px;
+	}
+	.flex_div:last-child{
+		height:200px;
+	}
+	
+	</style>
+	<body>
+	<div class="flex">
+		<div class="flex_div"></div>
+		<div class="flex_div"></div>
+		<div class="flex_div"></div>
+		<div class="flex_div"></div>
+	</div>
+	</body>
+</html>
