@@ -19,16 +19,16 @@
 		position:absolute;
 		display:flex;
 		width:100%;
-		min-width:640px;
 		height:100%;
 		padding:20px;
 		border:2px solid #C33;
+		flex-direction:row;
 		align-items:center;
 		justify-content:space-between;
 	}
 	.flex_div{
 		width:150px;
-		border:2px solid #C33;
+		border:2px solid #F00;
 		
 	}
 	.flex_div:first-child{
@@ -42,8 +42,22 @@
 	}
 	.flex_div:last-child{
 		height:200px;
+		border:2px solid #00F;
 	}
-	
+	@media(max-width:640px){
+		.flex_div:last-child{
+			order:1;
+		}
+		.flex_div:first-child{
+			order:2;
+		}
+		.flex_div:nth-child(2){
+			order:3;
+		}
+		.flex_div:nth-child(3){
+			order:4;
+		}
+	}
 	</style>
 	<body>
 	<div class="flex">
