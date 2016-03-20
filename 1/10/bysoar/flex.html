@@ -29,7 +29,6 @@
 	.flex_div{
 		width:150px;
 		border:2px solid #F00;
-		
 	}
 	.flex_div:first-child{
 		height:120px;
@@ -45,6 +44,9 @@
 		border:2px solid #00F;
 	}
 	@media(max-width:640px){
+		.flex{
+			flex-wrap:wrap;
+		}
 		.flex_div:last-child{
 			order:1;
 		}
