@@ -37,7 +37,7 @@ var aqiData = [
 		if(val[1]>60){ return val; }
 	}).sort(function(q,h){				//排序
 		return h[1]-q[1];
-    }).forEach(function(val,index){		//添加结点
+	}).forEach(function(val,index){		//添加结点
 		if(val!=null){
 			var temNode=document.createElement("li");
 			temNode.innerHTML="第"+(index+1)+"名："+val[0]+","+val[1];
