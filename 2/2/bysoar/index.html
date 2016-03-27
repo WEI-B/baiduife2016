@@ -40,7 +40,7 @@ var aqiData = [
 	}).forEach(function(val,index){		//添加结点
 		if(val!=null){
 			var temNode=document.createElement("li");
-			temNode.innerHTML="第"+(index+1)+"名："+val[0]+","+val[1];
+			temNode.innerHTML=["第",(index+1),"名：",val[0],",",val[1]].join("");
 			df.appendChild(temNode);
 		}
 	});
