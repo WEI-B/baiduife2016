@@ -1,0 +1,79 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 18</title>
+  </head>
+  <style>
+  input{
+	background:#fff;
+	border-radius:3px;
+	border:1px solid #ccc;
+	margin-right:10px;
+	padding:10px;
+  }
+  input[type=submit]{
+	cursor:pointer;
+  }
+  input[type=submit]:hover{
+	background:#f93;
+	color:#fff;
+  }
+  #in div{
+	display:inline-block;
+	background:#f60;
+	margin:10px;
+	height:40px;
+	width:80px;
+	border-radius:3px;
+	color:#fff;
+	text-align:center;
+	overflow:hidden;
+	font-size:12px;
+  }
+  </style>
+  <body>
+	<input type="text" id="form_text"/><input type="submit" value="左侧入" id="form_lin"/><input type="submit" value="右侧入" id="form_rin"/><input type="submit" value="左侧出" id="form_lout"/><input type="submit" value="右侧出" id="form_rout"/>
+	<div id="in"></div>
+	<script>
+	(function(){
+		var inObj=document.getElementById("in");
+		function commenEvent(node,event,callback){
+			if(window.addEventListener){
+				node.addEventListener(event,callback,false);
+			}else if(window.attachEvent){
+				node.attachEvent("on"+event,callback);
+			}else{
+				node["on"+event]=callback;
+			}
+		}
+		commenEvent(document.getElementById("form_lin"),"click",function(){
+			var text=document.getElementById("form_text").value;
+			var temNode=document.createElement("div");
+			temNode.innerHTML=text;
+			if(inObj.childNodes.length===0){
+				inObj.appendChild(temNode);
+			}else{
+				inObj.insertBefore(temNode,inObj.childNodes[0]);
+			}
+		});
+		commenEvent(document.getElementById("form_rin"),"click",function(){
+			var text=document.getElementById("form_text").value;
+			var temNode=document.createElement("div");
+			temNode.innerHTML=text;
+			inObj.appendChild(temNode);
+		});
+		commenEvent(document.getElementById("form_lout"),"click",function(){
+			if(inObj.childNodes.length>0){
+				inObj.childNodes[0].remove();
+			}
+		});
+		commenEvent(document.getElementById("form_rout"),"click",function(){
+			if(inObj.childNodes.length>0){
+				inObj.childNodes[(inObj.childNodes.length-1)].remove();
+			}
+		});
+	})();
+	</script>
+  </body>
+</html>
