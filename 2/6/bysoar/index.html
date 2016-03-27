@@ -65,12 +65,22 @@
 		});
 		commenEvent(document.getElementById("form_lout"),"click",function(){
 			if(inObj.childNodes.length>0){
+				alert(inObj.childNodes[0].innerHTML);
 				inObj.childNodes[0].remove();
 			}
 		});
 		commenEvent(document.getElementById("form_rout"),"click",function(){
 			if(inObj.childNodes.length>0){
+				alert(inObj.childNodes[(inObj.childNodes.length-1)].innerHTML);
 				inObj.childNodes[(inObj.childNodes.length-1)].remove();
+			}
+		});
+		commenEvent(document.getElementById("in"),"click",function(e){
+			e=e||window.event;
+			var target=e.target||e.serElement;
+			if(target.nodeName.toLowerCase()=="div"){
+				alert(target.innerHTML);
+				target.remove();
 			}
 		});
 	})();
