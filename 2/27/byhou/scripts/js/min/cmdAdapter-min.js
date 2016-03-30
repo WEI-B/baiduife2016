@@ -1,0 +1,1 @@
+!function(t,r){if(t.cmdAdapter)throw new Error("cmdAdapter has already exit!");var n={translate:function(t,r){},BUS:function(t){},Mediator:function(t){return JSON.stringify(t)}}}(this);
