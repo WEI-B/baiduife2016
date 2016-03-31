@@ -1,0 +1,1 @@
+!function(e,t){if(e.DC)throw new Error("DC already exits");var i={receiver:function(e){e=cmdAdapter.uncode("BUS",e),this.DOM.shipState(e.id,e.getCommandName()[0],e.attach.energy)},DOM:{shipState:function(e,t,i){$("#director .spaceship-list ."+e+" .state").html(t),$("#director .spaceship-list ."+e+" .energy").html(i+"%")}}};BUS.on("to_director",i.receiver)}(this);

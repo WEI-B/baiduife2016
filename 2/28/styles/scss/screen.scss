@@ -1,0 +1,220 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/css3";
+@import "DEFAULT";
+@import "config";
+
+@include init;
+
+body{
+	@include Overflow(Y);
+}
+
+#planet-spaceship{
+	height: 100%;
+	margin: 0 200px;
+	
+	background: $space_color;
+	overflow: hidden;
+	
+	h4{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding-top: 10px;
+		
+		color: #fff;
+		font-size: 1.4em;
+		text-align: center;
+	}
+	
+	.adjust{
+		top: 50%;
+		height: 300px;
+		width: 300px;
+		margin: 0 auto;
+		
+		.planet{
+			top: -50%;
+			
+			height: 100%;
+			width: 100%;
+		
+			background: $planet_color;
+			@include border-radius(50%);
+			
+			.spaceship-list{
+				$height: 40px;
+				$width: 140px;
+				
+				width: $width;
+				margin: 0px auto;
+				
+				.spaceship{
+					
+					position: absolute;
+					
+					width: $width;
+					height: $height;
+					
+					background: $spaceship_color;
+					
+					@include transform(rotate(0deg));
+					@include border-radius( $height / 2 );
+					
+					p{
+						color: #fff;
+						line-height: $height;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+#director{
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 100%;
+	
+	padding: 0 20px;
+	background: #fff;
+	
+	@include Overflow(Y);
+	
+	h4{
+		color: #777;
+		font-size: 1.4em;
+		text-align: center;
+		
+		padding-top: 10px;
+		padding-bottom: 20px;
+	}
+	
+	form.add-new{
+		
+		> div {
+			
+			border-bottom: 1px solid #ddd;
+			padding: 10px 0;
+			h6{
+				color: #777;
+				font-size: 1em;
+			}
+			
+			> label{
+				display: block;
+				padding: 5px 0;
+				
+				input{
+					margin: 0 5px;
+				}
+			}
+		}
+		
+		button{
+			cursor: pointer;
+		}
+		.add-new-ship{
+			display: block;
+			width: 100%;
+			
+			padding: 10px;
+			background: deepskyblue;
+			color: #fff;
+			
+		}
+	}
+	
+	
+	
+	
+	.spaceship-list{
+		
+		margin: 20px 0;
+		border-top: 1px dashed #ddd;
+		.spaceship{
+			padding: 10px 0;
+			
+			border-bottom: 1px dashed #ddd;
+			
+			h6{
+				color: #888;
+				font-weight: 700;
+				font-size: 1em;
+				margin: 5px 0;
+			}
+			
+			.btn-grp{
+				$height: 30px;
+				height: $height;
+				
+				button{
+					width: 33.333%;
+					height: $height;
+					float: left;
+					
+					margin: 0;
+					
+					color: #fff;
+					
+					&.fly{
+						background: deepskyblue;
+					}
+					&.stop{
+						background: darkorange;
+					}
+					&.destroy{
+						background: hotpink;
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+#brief{
+	
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 200px;
+	height: 100%;
+	
+	padding: 0 20px;
+	background: #fff;
+	
+	// border: 1px solid #ccc;
+	// @include border-radius( 10px );
+	
+	h4{
+		color: #777;
+		font-size: 1.4em;
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 20px;
+	}
+	
+	ul{
+		margin-left: 20px;
+		li{
+			list-style: square;
+			
+			border-bottom: 1px dashed #ddd;
+			padding: 10px 0;
+		}
+	}
+	
+	p{
+		color: #888;
+	}
+}
